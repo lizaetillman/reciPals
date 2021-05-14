@@ -1,24 +1,26 @@
-# README
+# reciPal -- The Ultimate Recipe Sharing App!
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This application provides a platform in which users can create recipes and share them with their friends! 
 
-Things you may want to cover:
+A user can only edit and delete their own recipe and even curate an entire list of recipes in the form of a cookbook. A cookbook can also be created and used as a "collaboration" or "sharing" tool where multiple users can own a cookbook and add recipes to it (but only the original creator of the cookbook can delete the cookbook in its entirety.)
 
-* Ruby version
+## Installation - Part I
 
-* System dependencies
+To get the application started, run the following in your terminal:
 
-* Configuration
+```ruby
+rails s
+```
 
-* Database creation
+Next, open your browser and visit "http://localhost:3000".
 
-* Database initialization
+## Installation - Part II
 
-* How to run the test suite
+1. Clone the repo
+<br> git clone git@github.com:lizaetillman/recipals.git
 
-* Services (job queues, cache servers, search engines, etc.)
+2. Install the gemfile packages
 
-* Deployment instructions
-
-* ...
+```ruby
+bundle install
+```
