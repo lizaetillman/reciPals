@@ -1,0 +1,7 @@
+<h1>Cookbook Index</h1>
+
+<ul>
+    <% @cookbooks.each do |cookbook| %>
+        <li><%= link_to cookbook.title, cookbook_path(cookbook) %></li>
+    <% end %>
+</ul>
