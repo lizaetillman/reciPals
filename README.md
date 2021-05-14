@@ -24,3 +24,16 @@ rails s
 
 Next, open your browser and visit "http://localhost:3000".
 
+
+## Contributing
+
+Bug reports and pull requests are welcome on GitHub at https://github.com/lizaetillman/recipals. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/lizaetillman/currency-rates-cli/
+
+
+## License
+
+The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+
+## Code of Conduct
+
+Everyone interacting in the CurrencyRatesCli project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/lizaetillman/currency_rates_cli/blob/master/CODE_OF_CONDUCT.md).
