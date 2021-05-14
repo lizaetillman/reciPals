@@ -1,4 +1,4 @@
-# reciPal -- The Ultimate Recipe Sharing App!
+# reciPals -- The Ultimate Recipe Sharing App!
 
 This application provides a platform in which users can create recipes and share them with their friends! 
 
