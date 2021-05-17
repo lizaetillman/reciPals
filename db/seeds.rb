@@ -10,7 +10,7 @@
 # Cookbook.create(title: 'Caribbean Cuisine', description: 'My favorite Jamaican and Bahamian recipes.')
 # Cookbook.create(title: 'Greek Cuisine', description: 'Vegetarian-friendly Greek dishes.')
 
-Recipe.create(title: 'Elotes (Mexican Street Corn)', description: 'corn, mayonnaise, chili powder, cotija cheese, cilantro', user_id: 1, cookbook_id: 1)
-Recipe.create(title: 'Bahamian Conch Salad', description: 'conch, fresh lime juice, ripe tomato, diced onion, cucumber, bell peppers, hot peppers, salt, pepper', user_id: 1, cookbook_id: 2)
-Recipe.create(title: 'The Best Greek Salad', description: 'roma tomatoes, cucumbers, red onion, bell peppers, kalamta olives, feta cheese, extra virgin olive oil', user_id: 2, cookbook_id: 1)
-Recipe.create(title: 'Tzatziki', description: 'plain Greek yogurt, cucumber, garlic, lemon juice, dill, extra virgin olive oil, salt, pepper', user_id: 2, cookbook_id: 1)
+# Recipe.create(title: 'Elotes (Mexican Street Corn)', description: 'corn, mayonnaise, chili powder, cotija cheese, cilantro', user_id: 1, cookbook_id: 1)
+# Recipe.create(title: 'Bahamian Conch Salad', description: 'conch, fresh lime juice, ripe tomato, diced onion, cucumber, bell peppers, hot peppers, salt, pepper', user_id: 1, cookbook_id: 2)
+# Recipe.create(title: 'The Best Greek Salad', description: 'roma tomatoes, cucumbers, red onion, bell peppers, kalamta olives, feta cheese, extra virgin olive oil', user_id: 2, cookbook_id: 1)
+# Recipe.create(title: 'Tzatziki', description: 'plain Greek yogurt, cucumber, garlic, lemon juice, dill, extra virgin olive oil, salt, pepper', user_id: 2, cookbook_id: 1)

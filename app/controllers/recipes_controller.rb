@@ -9,18 +9,20 @@ class RecipesController < ApplicationController
     end
 
     def new
+        @recipe = Recipe.new
     end
-    
-    def create #no view
+
+    def create 
+        @recipe = Recipe.create(params[:recipe])
     end
 
     def edit
     end
 
-    def update #no view
+    def update 
     end
 
-    def destroy #no view
+    def destroy 
     end
 
     private
