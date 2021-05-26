@@ -1,11 +1,4 @@
-<h1>Cookbook Show</h1>
-
-<h1><%= @cookbook.title %></h1>
-<h3><%= @cookbook.description %></h3>
-
-<%= @recipes.each do |recipe| %>
-<h5><%= recipe.title %></h5>
-<% end %>
+<h1>New Recipes</h1>
 
 <%= form_for(@recipe) do |f| %>
 
@@ -20,4 +13,5 @@
 </div>
 <% end %>
 
-<%= link_to "All Cookbooks", cookbooks_path %>
+
+<li><%= link_to "All Recipes", recipes_path %></li>

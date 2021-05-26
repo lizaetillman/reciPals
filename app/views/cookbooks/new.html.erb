@@ -1,1 +1,17 @@
 <h1>New Cookbook</h1>
+
+<%= form_for(@cookbook) do |f| %>
+
+<div>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+    
+    <%= f.label :description %>
+    <%= f.text_field :description %>
+    
+    <%= f.submit%>
+</div>
+<% end %>
+
+
+<li><%= link_to "All Cookbooks", cookbooks_path %></li>

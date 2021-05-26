@@ -1,7 +1,8 @@
 class RecipesController < ApplicationController
     
     def index
-        @recipes = Recipe.all
+        @cookbook = Cookbook.find(params[:cookbook_id])
+        @recipes = @cookbook.recipes
     end
 
     def show
@@ -13,7 +14,14 @@ class RecipesController < ApplicationController
     end
 
     def create 
-        @recipe = Recipe.create(params[:recipe])
+        @recipe = Recipe.new(recipe_params)
+        byebug
+        @recipe.user_id = User.find_by(:username => session[:username]).id
+            if @recipe.save
+                redirect_to cookbook_recipe_path(@recipe)
+            else
+                render 'new'
+            end
     end
 
     def edit
@@ -27,8 +35,8 @@ class RecipesController < ApplicationController
 
     private
 
-    def recipes_params
-        params.require(:recipes).permit(:title, :description)
+    def recipe_params
+        params.require(:recipe).permit(:title, :description)
     end
 
 end
