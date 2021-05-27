@@ -7,6 +7,7 @@
     <%= f.label :password %>
     <%= f.text_field :password%>
 
-    <%= f.submit "Login" %> | <a href="/logout"> Logout </a>
-    <%= button_to "Log in with Google", '/auth/google_oauth2'  %>
+    <%= f.submit "Login" %> | <a href="/logout"> Logout </a><br>
 <% end %>
+
+<%= button_to "Log in with Google", '/auth/google_oauth2' %>

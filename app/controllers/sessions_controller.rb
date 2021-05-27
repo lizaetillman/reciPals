@@ -4,10 +4,12 @@ before_action :dynamic_background, only: [:new]
 
     def omniauth
         user = User.from_omniauth(request.env['omniauth.auth'])
+        # byebug
         if user.valid?
             session[:user_id] = user.id
-            redirect_to user_path(user)
+            redirect_to user_path(user.id)
         else
+            flash[:message] = user.errors.full_messages.join(", ")
             redirect_to '/login'
         end
     end
@@ -15,11 +17,11 @@ before_action :dynamic_background, only: [:new]
     def login
     end
 
-    def create #login
-        user = User.find_by(username: params[:user][:username])
-        if user && user.authenticate(params[:user][:password])
-            session[:username] = user.username
-            redirect_to user_path(user)
+    def create
+        @user = User.find_by(username: params[:user][:username])
+        if @user && @user.authenticate(params[:user][:password])
+            session[:user_id] = @user.id
+            redirect_to user_path(@user)
         else
             redirect_to :login, notice: "Please try again. Your login was not successful."
         end 
