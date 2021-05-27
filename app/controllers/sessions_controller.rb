@@ -2,15 +2,15 @@ class SessionsController < ApplicationController
 before_action :redirect_already_logged_in, only: [:new]
 before_action :dynamic_background, only: [:new]
 
-    # def google_login
-    #     username = auth_hash['info']['name']
-    #     user = User.find_or_create_by(username: username) do |user|
-    #     user.username = username
-    #     user.password = SecureRandom.hex
-    # end
-    #     session[:username] = user.username
-    #     redirect_to :devtop
-    # end
+    def omniauth
+        user = User.from_omniauth(request.env['omniauth.auth'])
+        if user.valid?
+            session[:user_id] = user.id
+            redirect_to user_path(user)
+        else
+            redirect_to '/login'
+        end
+    end
 
     def login
     end
