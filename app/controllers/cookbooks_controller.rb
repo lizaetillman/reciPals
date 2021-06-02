@@ -1,7 +1,7 @@
 class CookbooksController < ApplicationController
 
     def index
-        @cookbooks = Cookbook.all
+        @cookbooks = Cookbook.order_by_name
     end
 
     def show 

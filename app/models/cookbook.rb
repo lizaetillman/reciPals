@@ -5,7 +5,7 @@ class Cookbook < ApplicationRecord
     has_many :recipes
     has_many :users, through: :recipes
     
-    # scope :large_cookbook, -> { joins(:recipes).where("recipes > 5")}
+    scope :order_by_name, -> { order(title: :asc) }
 
 end
 

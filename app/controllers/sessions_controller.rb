@@ -34,12 +34,4 @@ before_action :dynamic_background, only: [:new]
 
     private
 
-    # def dynamic_background
-    #     @backgroundimg = ["https://rb.gy/d2bjqr", "https://rb.gy/93exoq", "https://rb.gy/axbchi", "https://rb.gy/ypujiv" ].sample(1).join(', ')
-    # end
-
-    # def auth_hash
-    #     request.env["omniauth.auth"]
-    # end
-
 end

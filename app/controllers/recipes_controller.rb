@@ -6,6 +6,7 @@ class RecipesController < ApplicationController
     end
 
     def show
+        @cookbook = Cookbook.find(params[:cookbook_id])
         @recipe = Recipe.find(params[:id])
     end
 
@@ -14,13 +15,15 @@ class RecipesController < ApplicationController
     end
 
     def create 
+        @cookbook = Cookbook.find(params[:cookbook_id])
         @recipe = Recipe.new(recipe_params)
-        byebug
+        @recipe.cookbook_id = @cookbook.id
         @recipe.user_id = User.find_by(:username => session[:username]).id
             if @recipe.save
-                redirect_to cookbook_recipe_path(@recipe)
+                redirect_to cookbook_recipe_path(@cookbook, @recipe)
             else
-                render 'new'
+                flash[:messages] = @recipe.errors.full_messages
+                redirect_to @cookbook
             end
     end
 
@@ -28,6 +31,7 @@ class RecipesController < ApplicationController
     end
 
     def update 
+
     end
 
     def destroy 
@@ -36,7 +40,7 @@ class RecipesController < ApplicationController
     private
 
     def recipe_params
-        params.require(:recipe).permit(:title, :description)
+        params.permit(:title, :description)
     end
 
 end

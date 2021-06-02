@@ -1,23 +1,34 @@
 <h1>Cookbook Show</h1>
 
 <h1><%= @cookbook.title %></h1>
-<h3><%= @cookbook.description %></h3>
+<p><%= @cookbook.description %></p>
 
-<%= @recipes.each do |recipe| %>
-<h5><%= recipe.title %></h5>
+<h3>Your List of Recipes:</h3>
+<% @recipes.each do |recipe| %>
+<%= link_to recipe.title, cookbook_recipe_path(recipe) %><br/>
 <% end %>
 
-<%= form_for(@recipe) do |f| %>
+<h3>Add a new Recipe:</h3>
 
-<div>
+
+<% if flash[:messages]%>
+      <h3>Error(s):</h3>
+      <ul>
+        <% flash[:messages].each do |message|%>
+        <li><%= message %></li>
+      </ul>
+      <% end %>
+<% end %>
+
+
+<%= form_with url: cookbook_recipes_path(@cookbook,@recipe) do |f| %>
     <%= f.label :title %>
-    <%= f.text_field :title %>
+    <%= f.text_field :title %><br/>
     
     <%= f.label :description %>
-    <%= f.text_field :description %>
+    <%= f.text_field :description %><br/>
     
     <%= f.submit%>
-</div>
 <% end %>
 
-<%= link_to "All Cookbooks", cookbooks_path %>
+<br/><%= link_to "All Cookbooks", cookbooks_path %>
